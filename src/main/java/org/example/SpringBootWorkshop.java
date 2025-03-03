@@ -1,14 +1,13 @@
 package org.example;
 
-import org.example.controller.PakudexController;
-import org.example.controller.PakuriController;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@SpringBootApplication
 public class SpringBootWorkshop {
 
     public static void main(String[] args) {
-        PakudexController pakudexController = new PakudexController();
-        PakuriController pakuriController = new PakuriController();
-        // serve stuff
+        SpringApplication.run(SpringBootWorkshop.class, args);
     }
 
 //    public static void main(String[] args) {
