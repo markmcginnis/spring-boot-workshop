@@ -1,0 +1,11 @@
+start on main, explain the basics of the whole project, emphasize the service has in memory state tied to its instance
+
+go to separate-instances, show the quick fix, but then show how the state is not reflected between the two instances
+
+go to constructor-injection, show the state is reflected, but hard to maintain because you have to init everything somewhere
+
+go to static-instances, show the state is reflected, but similar issues to constructor since it has to come from somewhere and has lots of boilerplate
+
+go to injecting-beans, show how beans work and how they get put in at constructor time
+
+go to autowiring-beans, explain how its basically setters that get set at bean creation time

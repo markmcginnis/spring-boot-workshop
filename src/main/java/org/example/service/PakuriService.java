@@ -3,7 +3,9 @@ package org.example.service;
 import org.example.models.Pakudex;
 import org.example.models.Pakuri;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class PakuriService {
@@ -18,6 +20,10 @@ public class PakuriService {
 
     public Pakuri getPakuriByName(String name) {
         return pakuriMap.get(name);
+    }
+
+    public List<Pakuri> getAllPakuri() {
+        return new ArrayList<>(pakuriMap.values());
     }
 
     public boolean addPakuri(String name) {

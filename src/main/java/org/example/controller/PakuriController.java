@@ -12,11 +12,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/pakuri")
 public class PakuriController {
 
     private PakuriService pakuriService;
+
+    @GetMapping
+    private ResponseEntity<List<Pakuri>> getAllPakuri() {
+        return ResponseEntity.ok(pakuriService.getAllPakuri());
+    }
 
     @GetMapping("/{name}")
     private ResponseEntity<Pakuri> getPakuri(@PathVariable String name) {
