@@ -2,14 +2,12 @@ package org.example.service;
 
 import org.example.models.Pakudex;
 import org.example.models.Pakuri;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Service
 public class PakuriService {
 
     private Map<String, Pakuri> pakuriMap = new HashMap<>();
