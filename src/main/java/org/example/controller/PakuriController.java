@@ -31,8 +31,8 @@ public class PakuriController {
     }
 
     @PostMapping
-    private ResponseEntity<Boolean> addPakuri(@RequestBody String name) {
-        return ResponseEntity.ok(pakuriService.addPakuri(name));
+    private ResponseEntity<Boolean> addPakuri(@RequestBody Pakuri pakuri) {
+        return ResponseEntity.ok(pakuriService.addPakuri(pakuri));
     }
 
     @PutMapping

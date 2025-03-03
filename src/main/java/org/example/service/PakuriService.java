@@ -26,11 +26,11 @@ public class PakuriService {
         return new ArrayList<>(pakuriMap.values());
     }
 
-    public boolean addPakuri(String name) {
-        if (pakuriMap.containsKey(name)) {
+    public boolean addPakuri(Pakuri pakuri) {
+        if (pakuriMap.containsKey(pakuri.getName())) {
             return false;
         }
-        pakuriMap.put(name, new Pakuri(name));
+        pakuriMap.put(pakuri.getName(), pakuri);
         return true;
     }
 
