@@ -11,9 +11,9 @@ public class PakuriService {
     private Map<String, Pakuri> pakuriMap = new HashMap<>();
 
     public Pakudex getAsPakudex() {
-        return Pakudex.builder()
-            .pakuriMap(new HashMap<>(pakuriMap))
-            .build();
+        Pakudex pakudex = new Pakudex();
+        pakudex.setPakuriMap(pakuriMap);
+        return pakudex;
     }
 
     public Pakuri getPakuriByName(String name) {
