@@ -25,6 +25,11 @@ public class PakuriController {
         return ResponseEntity.ok(PakuriService.getInstance().getAllPakuri());
     }
 
+    @GetMapping
+    private ResponseEntity<List<Pakuri>> getAllPakuri() {
+        return ResponseEntity.ok(pakuriService.getAllPakuri());
+    }
+
     @GetMapping("/{name}")
     private ResponseEntity<Pakuri> getPakuri(@PathVariable String name) {
         return ResponseEntity.ok(PakuriService.getInstance().getPakuriByName(name));
