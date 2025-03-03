@@ -29,4 +29,13 @@ public class PakudexController {
         return ResponseEntity.ok(success);
     }
 
+    @PostMapping
+    private ResponseEntity<Boolean> setPakudex(@RequestBody Pakudex pakudex) {
+        boolean failure = pakudex.getPakuriMap()
+            .values()
+            .stream()
+            .anyMatch(pakuri -> !pakuriService.updatePakuri(pakuri));
+        return ResponseEntity.ok(failure);
+    }
+
 }
