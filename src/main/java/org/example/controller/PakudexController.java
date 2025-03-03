@@ -22,11 +22,11 @@ public class PakudexController {
 
     @PostMapping
     private ResponseEntity<Boolean> setPakudex(@RequestBody Pakudex pakudex) {
-        boolean failure = pakudex.getPakuriMap()
+        boolean success = pakudex.getPakuriMap()
             .values()
             .stream()
-            .anyMatch(pakuri -> !pakuriService.updatePakuri(pakuri));
-        return ResponseEntity.ok(failure);
+            .allMatch(pakuri -> pakuriService.addPakuri(pakuri));
+        return ResponseEntity.ok(success);
     }
 
 }
