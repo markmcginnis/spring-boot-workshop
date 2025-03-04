@@ -9,6 +9,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Profile("pakuri-repository-in-memory")
@@ -23,13 +24,8 @@ public class InMemoryPakuriRepository implements PakuriRepository {
     }
 
     @Override
-    public Collection<Pakuri> saveAll(Collection<Pakuri> pakuris) {
-        return pakuris.stream().map(this::save).collect(Collectors.toList());
-    }
-
-    @Override
-    public Pakuri find(String name) {
-        return pakuriMap.get(name);
+    public Optional<Pakuri> findById(String name) {
+        return Optional.ofNullable(pakuriMap.get(name));
     }
 
     @Override
@@ -38,8 +34,8 @@ public class InMemoryPakuriRepository implements PakuriRepository {
     }
 
     @Override
-    public Pakuri delete(String name) {
-        return pakuriMap.remove(name);
+    public void deleteById(String name) {
+        pakuriMap.remove(name);
     }
 
     @Override
