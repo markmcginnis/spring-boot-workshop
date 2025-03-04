@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Profile("pakuri-repository-in-memory")
-@Repository
+@Repository("pakuri-repository-in-memory")
 public class InMemoryPakuriRepository implements PakuriRepository {
 
     private final Map<String, Pakuri> pakuriMap = new HashMap<>();
