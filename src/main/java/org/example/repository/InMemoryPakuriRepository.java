@@ -38,8 +38,4 @@ public class InMemoryPakuriRepository implements PakuriRepository {
         pakuriMap.remove(name);
     }
 
-    @Override
-    public void deleteAll() {
-        pakuriMap.clear();
-    }
 }
