@@ -18,7 +18,7 @@ import java.util.List;
 @RequestMapping("/pakuri")
 public class PakuriController {
 
-    private PakuriService pakuriService;
+    private PakuriService pakuriService = new PakuriService();
 
     @GetMapping
     private ResponseEntity<List<Pakuri>> getAllPakuri() {

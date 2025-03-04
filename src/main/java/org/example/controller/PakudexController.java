@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/pakudex")
 public class PakudexController {
 
-    private PakuriService pakuriService;
+    private PakuriService pakuriService = new PakuriService();
 
     @GetMapping
     private ResponseEntity<Pakudex> getPakudex() {

@@ -10,4 +10,10 @@ public class SpringBootWorkshop {
         SpringApplication.run(SpringBootWorkshop.class, args);
     }
 
+//    public static void main(String[] args) {
+//        PakuriController pakuriController = new PakuriController();
+//        PakudexController pakudexController = new PakudexController();
+//        // serve stuff
+//    }
+
 }
