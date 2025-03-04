@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/pakudex")
 public class PakudexController {
 
-    private PakuriService pakuriService;
+    private PakuriService pakuriService = PakuriService.getInstance();
 
     @GetMapping
     private ResponseEntity<Pakudex> getPakudex() {
-        return ResponseEntity.ok(pakuriService.getAsPakudex());
+        return ResponseEntity.ok(PakuriService.getInstance().getAsPakudex());
     }
 
     @PostMapping
@@ -25,7 +25,7 @@ public class PakudexController {
         boolean success = pakudex.getPakuriMap()
             .values()
             .stream()
-            .allMatch(pakuri -> pakuriService.addPakuri(pakuri));
+            .allMatch(pakuri -> PakuriService.getInstance().addPakuri(pakuri));
         return ResponseEntity.ok(success);
     }
 

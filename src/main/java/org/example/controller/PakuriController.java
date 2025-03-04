@@ -18,31 +18,31 @@ import java.util.List;
 @RequestMapping("/pakuri")
 public class PakuriController {
 
-    private PakuriService pakuriService;
+    private PakuriService pakuriService = PakuriService.getInstance();
 
     @GetMapping
     private ResponseEntity<List<Pakuri>> getAllPakuri() {
-        return ResponseEntity.ok(pakuriService.getAllPakuri());
+        return ResponseEntity.ok(PakuriService.getInstance().getAllPakuri());
     }
 
     @GetMapping("/{name}")
     private ResponseEntity<Pakuri> getPakuri(@PathVariable String name) {
-        return ResponseEntity.ok(pakuriService.getPakuriByName(name));
+        return ResponseEntity.ok(PakuriService.getInstance().getPakuriByName(name));
     }
 
     @PostMapping
     private ResponseEntity<Boolean> addPakuri(@RequestBody Pakuri pakuri) {
-        return ResponseEntity.ok(pakuriService.addPakuri(pakuri));
+        return ResponseEntity.ok(PakuriService.getInstance().addPakuri(pakuri));
     }
 
     @PutMapping
     private ResponseEntity<Boolean> updatePakuri(@RequestBody Pakuri pakuri) {
-        return ResponseEntity.ok(pakuriService.updatePakuri(pakuri));
+        return ResponseEntity.ok(PakuriService.getInstance().updatePakuri(pakuri));
     }
 
     @DeleteMapping("/{name}")
     private ResponseEntity<Boolean> deletePakuri(@PathVariable String name) {
-        return ResponseEntity.ok(pakuriService.removePakuri(name));
+        return ResponseEntity.ok(PakuriService.getInstance().removePakuri(name));
     }
 
 }

@@ -10,6 +10,15 @@ import java.util.Map;
 
 public class PakuriService {
 
+    private static PakuriService instance = null;
+
+    public static PakuriService getInstance() {
+        if (instance == null) {
+            instance = new PakuriService();
+        }
+        return instance;
+    }
+
     private Map<String, Pakuri> pakuriMap = new HashMap<>();
 
     public Pakudex getAsPakudex() {
