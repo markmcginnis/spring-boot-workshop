@@ -18,6 +18,10 @@ import java.util.List;
 @RequestMapping("/pakuri")
 public class PakuriController {
 
+    public PakuriController(PakuriService pakuriService) {
+        this.pakuriService = pakuriService;
+    }
+
     private PakuriService pakuriService;
 
     @GetMapping
